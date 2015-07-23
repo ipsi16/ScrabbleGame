@@ -62,7 +62,7 @@ public:
     //cout << "Calculating score for" << word << endl;
     
     for(int i = 0; i < word.size(); i++)
-      score += scoreOfLetter[i];
+      score += scoreOfLetter[word[i] - 'a'];
 
     return score;
 
