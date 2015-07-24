@@ -2,11 +2,10 @@
 #include<fstream>
 #include<vector>
 #include<algorithm>
-#include<string>
 #include<map>
 using namespace std;
 
-class Scrabble{
+class ScrabbleWordGenerator{
 
 private:
   
@@ -19,7 +18,7 @@ private:
   
 public:
   
-  Scrabble(string inputFile)
+  ScrabbleWordGenerator(string inputFile)
   {
     file = inputFile;
     charMultiplier= new int[7]{1, 2, 1, 1, 2, 1, 1};
@@ -70,7 +69,7 @@ public:
     int count = 0;
     
     for(int i = 0; i < character.size(); i++){
-      if(character[i] == '_')
+      if(character[i] == wildChar)
 	count++;
     } 
     
@@ -158,7 +157,7 @@ int main(){
   
   string filePath = "/tmp/wordList.txt";
   string characters;
-  Scrabble scrabble(filePath);
+  ScrabbleWordGenerator scrabble(filePath);
   
   scrabble.readDictionary();
   cin >> characters;
