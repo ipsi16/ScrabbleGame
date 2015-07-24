@@ -30,7 +30,7 @@ public:
 
   void readDictionary()
   {
-    ifstream wordsFile(file);	
+    ifstream wordsFile(file.c_str());	
     string currentWord;
     
     if(wordsFile.is_open())
@@ -157,6 +157,10 @@ public:
   }
 };
 
+bool checkConstraints()
+{
+	
+}
 int main(){
   
   string filePath = "/tmp/wordList.txt";
