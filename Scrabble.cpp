@@ -151,17 +151,27 @@ public:
     }
     
   }
+
+  void clearAllDataStructres(){
+    scoreWordMap.clear();
+  }
 };
 
 int main(){
   
   string filePath = "/tmp/wordList.txt";
-  string characters;
+  string characters = "";
   ScrabbleWordGenerator scrabble(filePath);
   
   scrabble.readDictionary();
+  
+  while(characters != "000") {
+    
   cin >> characters;
   scrabble.getAllPossibleWords(characters);
   scrabble.printMap();
+  scrabble.clearAllDataStructres();
+  
+  }
   
 }
